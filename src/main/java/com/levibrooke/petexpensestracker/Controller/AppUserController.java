@@ -41,4 +41,10 @@ public class AppUserController {
 
         return new RedirectView("/");
     }
+
+    // GET -> Login page
+    @GetMapping("/login")
+    public String getLoginPage() {
+        return "login";
+    }
 }
