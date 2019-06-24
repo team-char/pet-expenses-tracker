@@ -1,4 +1,4 @@
-package com.levibrooke.petexpensestracker;
+package com.levibrooke.petexpensestracker.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
