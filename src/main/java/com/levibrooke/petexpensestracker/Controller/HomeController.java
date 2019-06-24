@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.security.Principal;
 
 @Controller
-public class FiDoController {
+public class HomeController {
 
     @GetMapping("/")
     public String getHome(Principal p, Model m) {
