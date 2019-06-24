@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FiDo Expenses</title>
+</head>
+<body>
+<h1>Enter your pet expenses</h1>
+<div>
+    <form action="/create/expense" method="POST">
+        Select a Category
+        <select name="category" required>
+            <option value="miscellaneous">Miscellaneous </option>
+            <option value="leisure">Leisure </option>
+            <option value="food">Food </option>
+            <option value="supplies">Supplies</option>
+
+        </select><br>
+        <label for="description"> Description</label>
+
+        <input type="text" name="description" id="description" placeholder="Describe your expense" required /><br>
+        <label for="amount"> Enter A Amount</label>
+        <input type="number" name="amount" id="amount" placeholder="Enter expense amount" required /><br>
+        <label for="date"> Date of Expense</label>
+        <input type="date" id="date" name="date"/><br>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>
