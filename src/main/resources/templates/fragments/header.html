@@ -1,0 +1,26 @@
+<header class="header" th:fragment="header" xmlns:th="http://www.springframework.org/schema/security">
+
+    <nav class="navBar">
+
+        <a th:if="${loggedInName}" href="/user" th:text="${loggedInName}"></a>
+
+        <a href="/">Fido Home</a>
+
+<!--        If logged in, take me to a page where I can add expense-->
+        <a th:if="${loggedInName}" href="/createExpense">Add expense</a>
+
+        <a th:if="${loggedInName} == false" href="/login">Login</a>
+
+        <a th:if="${loggedInName} == false" href="/signup">Signup</a>
+
+        <a th:if="${loggedInName}" href="/logout">Logout</a>
+
+
+<!--        Even if I'm not logged in, take me to about us page-->
+        <a href="/aboutUs">About Us</a>
+
+    </nav>
+
+</header>
+
+
