@@ -1,23 +1,16 @@
-<header class="header" th:fragment="header" xmlns:th="http://www.springframework.org/schema/security">
+<header class="header" th:fragment="header" xmlns:th="http://www.thymeleaf.org">
 
     <nav class="navBar">
 
-        <a th:if="${loggedInName}" href="/user" th:text="${loggedInName}"></a>
-
-        <a href="/">Fido Home</a>
-
-<!--        If logged in, take me to a page where I can add expense-->
-        <a th:if="${loggedInName}" href="/createExpense">Add expense</a>
-
-        <a th:if="${loggedInName} == false" href="/login">Login</a>
-
-        <a th:if="${loggedInName} == false" href="/signup">Signup</a>
-
-        <a th:if="${loggedInName}" href="/logout">Logout</a>
-
-
-<!--        Even if I'm not logged in, take me to about us page-->
-        <a href="/aboutUs">About Us</a>
+        <ul>
+            <li><a href="/">Fido Home</a></li>
+            <li th:if="${loggedInName}"><a href="/user" th:text="${loggedInName}"></a></li>
+            <li th:if="${loggedInName}"><a href="/add-expense">Add Expense</a></li>
+            <li th:if="${loggedInName}"><a href="/logout">Logout</a></li>
+            <li th:if="${loggedInName} == false"><a href="/login">Login</a></li>
+            <li th:if="${loggedInName} == false"><a href="/sign-up">Signup</a></li>
+            <li><a href="/about-us">About Us</a></li>
+        </ul>
 
     </nav>
 

@@ -18,7 +18,7 @@ public class FiDoController {
 
 
     public void isUserLoggedIn(Principal p, Model m){
-        if(p!=null){
+        if(p != null){
             m.addAttribute("loggedInName", p.getName());
         }
         else {
