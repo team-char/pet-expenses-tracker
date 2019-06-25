@@ -16,6 +16,11 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/about-us")
+    public String getAboutUs(Principal p, Model m) {
+        isUserLoggedIn(p, m);
+        return "about-us";
+    }
 
     public void isUserLoggedIn(Principal p, Model m){
         if(p != null){
