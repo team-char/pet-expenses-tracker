@@ -25,7 +25,7 @@ public class ExpenseController {
     @GetMapping("/create-expense")
     public String getFormExpense(Principal p, Model m){
         HomeController.isUserLoggedIn(p, m);
-        return "/create-expense";
+        return "create-expense";
     }
 
     // POST: route to post one expense
@@ -47,7 +47,7 @@ public class ExpenseController {
         List<Expense> expenseList = (List<Expense>) expenseRepository.findAll();
         m.addAttribute(expenseList);
         HomeController.isUserLoggedIn(p, m);
-        return "/all-expense";
+        return "all-expense";
     }
 
 
