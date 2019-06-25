@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class AppUser implements UserDetails {
@@ -20,6 +21,9 @@ public class AppUser implements UserDetails {
     String petName;
     String petType;
 
+    @OneToMany(mappedBy="appUser")
+    public List<Expense> expenses;
+
     public AppUser() {}
 
     public AppUser(String username, String password, String petName, String petType) {
@@ -34,9 +38,7 @@ public class AppUser implements UserDetails {
         return id;
     }
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
     public String getPassword() {
         return password;
@@ -49,6 +51,10 @@ public class AppUser implements UserDetails {
     public String getPetType() {
         return petType;
     }
+
+    public List<Expense> getExpenses() { return expenses; }
+
+    public void setExpenses(List<Expense> expenses) { this.expenses = expenses; }
 
     // UserDetails methods
     @Override
