@@ -24,9 +24,6 @@ public class AppUserController {
     AppUserRepository appUserRepository;
 
     @Autowired
-    CategoryRepository categoryRepository;
-
-    @Autowired
     PasswordEncoder bCryptPasswordEncoder;
 
     // GET -> Sign up page
@@ -51,8 +48,6 @@ public class AppUserController {
     // GET -> Login page
     @GetMapping("/login")
     public String getLoginPage() {
-//        Category category = new Category("Food");
-//        categoryRepository.save(category);
         return "login";
     }
 }

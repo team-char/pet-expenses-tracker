@@ -4,7 +4,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name="expense")
@@ -15,7 +17,14 @@ public class Expense {
     long id;
 
     @DateTimeFormat(pattern = "MM-dd-yyyy")
+    Date expenseDate;
+
+    @Column(name = "created_at", updatable = false)
     Date createdAt;
+
+    @Column(name = "updated_at")
+    Date updatedAt;
+
     String description;
     String categoryName;
 
@@ -27,16 +36,31 @@ public class Expense {
 
     public Expense(){}
 
-    public Expense(String description, Double amount, Date createdAt, String categoryName) {
+    public Expense(String description, Double amount, String expenseDate, String categoryName) {
         this.description = description;
         this.amount = amount;
-        this.createdAt = createdAt;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
         this.categoryName = categoryName;
+
+        try {
+            this.expenseDate = new SimpleDateFormat("yyyy-MM-dd").parse(expenseDate);
+        } catch (ParseException e) {
+            System.out.println(e);
+        }
     }
 
     public long getId() { return id; }
 
     public Date getCreatedAt() { return createdAt; }
+
+    public Date getExpenseDate() {
+        return expenseDate;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
 
     public String getDescription() { return description; }
 

@@ -12,9 +12,6 @@ public class PetExpensesTrackerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PetExpensesTrackerApplication.class, args);
-//		Category category = new Category();
-//		category.loadData();
-
 	}
 
 }
