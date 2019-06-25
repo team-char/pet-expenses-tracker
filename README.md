@@ -61,3 +61,5 @@ up an app with dependencies on Web, Thymeleaf, JPA, Postgres, and Security (and 
 - Sprint Auth Cheat Sheet - https://github.com/codefellows/seattle-java-401d4/blob/master/SpringAuthCheatSheet.md
 - Hiberate Many-to-Many - https://www.baeldung.com/hibernate-many-to-many
 - RDS Cheat Sheet - https://github.com/codefellows/seattle-java-401d4/blob/master/RDSCheatSheet.md
+- Currency format - http://www.captaindebug.com/2011/08/using-spring-3-numberformat-annotation.html#.XRF7upNKgsk
+- Generate an empty table the populate DB - https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
