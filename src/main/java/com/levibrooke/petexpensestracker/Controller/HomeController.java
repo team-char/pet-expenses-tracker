@@ -22,7 +22,13 @@ public class HomeController {
         return "about-us";
     }
 
-    public void isUserLoggedIn(Principal p, Model m){
+    @GetMapping("/dashboard")
+    public String getDashboardPage(Principal p, Model m){
+        isUserLoggedIn(p, m);
+        return "dashboard";
+    }
+
+    public static void isUserLoggedIn(Principal p, Model m){
         if(p != null){
             m.addAttribute("loggedInName", p.getName());
         }
@@ -30,6 +36,8 @@ public class HomeController {
             m.addAttribute("loggedInName", false);
         }
     }
+
+
 }
 
 

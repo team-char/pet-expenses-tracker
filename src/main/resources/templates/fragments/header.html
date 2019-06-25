@@ -5,7 +5,7 @@
         <ul>
             <li><a href="/">Fido Home</a></li>
             <li th:if="${loggedInName}"><a href="/user" th:text="${loggedInName}"></a></li>
-            <li th:if="${loggedInName}"><a href="/add-expense">Add Expense</a></li>
+            <li th:if="${loggedInName}"><a href="/create-expense">Add Expense</a></li>
             <li th:if="${loggedInName}"><a href="/logout">Logout</a></li>
             <li th:if="${loggedInName} == false"><a href="/login">Login</a></li>
             <li th:if="${loggedInName} == false"><a href="/sign-up">Signup</a></li>
