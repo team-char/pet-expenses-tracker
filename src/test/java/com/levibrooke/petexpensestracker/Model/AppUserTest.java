@@ -61,7 +61,7 @@ public class AppUserTest {
 
     @Test
     public void testIntegrationHome() throws Exception{
-        mockMvc.perform(get("/")).andExpect(content().string(containsString("")));
+        mockMvc.perform(get("/")).andExpect(content().string(containsString("Login")));
 
     }
 
