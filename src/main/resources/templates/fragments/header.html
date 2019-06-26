@@ -3,19 +3,20 @@
 
     <div class="custom-menu-wrapper">
 
-    <div class="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
+    <div class="pure-menu pure-menu-horizontal">
         <div class="custom-menu-screen"></div>
 
             <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a class="pure-menu-link" href="/"><img class="logoImage" src="img/fiDoughLogo.png"/></a></li>
+                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/dashboard" th:text="${loggedInName}"></a></li>
                 <li class="pure-menu-item"><a class="pure-menu-link" href="/">Fido Home</a></li>
-                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/user" th:text="${loggedInName}"></a></li>
-                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/create-expense">Add Expense</a></li>
-                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/logout">Logout</a></li>
-                <li class="pure-menu-item" th:if="${loggedInName} == false"><a class="pure-menu-link" href="/login">Login</a></li>
-                <li class="pure-menu-item" th:if="${loggedInName} == false"><a class="pure-menu-link" href="/sign-up">Signup</a></li>
                 <li class="pure-menu-item"><a class="pure-menu-link" href="/about-us">About Us</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/create-expense">Add Expense</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/dashboard">Dashboard</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/logout">Logout</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName} == false"><a class="pure-menu-link" href="/sign-up">Signup</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName} == false"><a class="pure-menu-link" href="/login">Login</a></li>
             </ul>
-
         </div>
     </div>
 

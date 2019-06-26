@@ -10,6 +10,8 @@
 </head>
 <body>
     <div th:replace="fragments/header :: header">...</div>
+    <h1 class="pageTitle">Sign Up</h1>
+    <p>Please enter your information below:</p>
     <form class="pure-form pure-form-stacked" action="/sign-up" method="POST">
         <label for="username"> Username
             <input type="text" name="username" id="username" placeholder="username" />

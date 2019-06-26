@@ -10,7 +10,8 @@
 </head>
 <body>
     <div th:replace="fragments/header :: header">...</div>
-    <h1>Log in</h1>
+    <h1 class="pageTitle">Log in</h1>
+    <p>Please enter your credentials below:</p>
     <form class="pure-form pure-form-stacked" action="/login" method="POST">
         <input name="username" placeholder="username" />
         <input type="password" name="password" placeholder="password" />

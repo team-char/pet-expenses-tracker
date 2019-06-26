@@ -1,3 +1,7 @@
+//Resource: https://getbootstrap.com/docs/4.1/components/card/#body
+//Resource: https://purecss.io/
+
+
 .custom-menu-wrapper {
           background-color: #808080;
           margin-bottom: 2.5em;
@@ -7,52 +11,65 @@
 
       .custom-menu {
           display: inline-block;
-          width: auto;
+          width: 100%;
           vertical-align: middle;
-          -webkit-font-smoothing: antialiased;
       }
 
-      .custom-menu .pure-menu-link,
-      .custom-menu .pure-menu-heading {
+     .pure-menu-link{
           color: white;
       }
 
-      .custom-menu .pure-menu-link:hover,
-      .custom-menu .pure-menu-heading:hover {
-          color: grey;
+     .pure-menu-link:hover{
+          color: black;
       }
 
 
       .custom-menu-screen {
           background-color: rgba(0, 0, 0, 0.5);
-          -webkit-transition: all 0.5s;
-          -moz-transition: all 0.5s;
-          -ms-transition: all 0.5s;
-          transition: all 0.5s;
           height: 3em;
-          width: 70em;
+          width: 100%;
           position: absolute;
           top: 0;
           z-index: -1;
       }
 
-      .custom-menu-screen {
-          -webkit-transform: translateY(-44px);
-          -moz-transform: translateY(-44px);
-          -ms-transform: translateY(-44px);
-          transform: translateY(-44px);
-      }
 
+    body{
+        background: #d4a2a2
+    }
 
     .aboutUsContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width:90%;
-    margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width:90%;
+        margin: 0 auto;
     }
 
     .pageTitle{
-    text-align: center;
-    padding-bottom: 20px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .homePageContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width:80%;
+        margin: 0 auto;
+    }
+
+    .homePageImageDiv{
+        width: 480px;
+        margin: 0 auto;
+    }
+
+    .logoImage{
+    margin-top: -7px;
+    height: 45px;
+    width: 55px;
+    }
+
+    .bioName{
+        text-align: center;
     }

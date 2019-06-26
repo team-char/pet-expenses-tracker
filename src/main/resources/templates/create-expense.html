@@ -12,8 +12,9 @@
 <body>
 
     <div th:replace="fragments/header :: header">...</div>
-    <fieldset>
-    <label>Expense Form </label>
+
+    <h1 class="pageTitle">Add an expense!</h1>
+
     <form class="pure-form pure-form-stacked" action="/create-expense" method="POST">
 
         <label>Select Category Expense</label>
@@ -37,7 +38,6 @@
         <button class="pure-button pure-button-primary" type="submit">Submit</button>
 
     </form>
-    </fieldset>
 
 </body>
 

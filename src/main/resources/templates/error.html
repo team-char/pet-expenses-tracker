@@ -11,22 +11,22 @@
 
     <body>
         <div th:replace="fragments/header :: header">...</div>
-        <h1>Error! Please see below for details:</h1>
-        <table>
+        <h1 class="pageTitle">Error!</h1>
+        <table class="pure-table">
+
+            <thead>
+                <tr>
+                    <th>Path</th>
+                    <th>Error</th>
+                    <th>Status</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+
             <tr>
-                <td>Path</td>
                 <td th:text="${path}"/>
-            </tr>
-            <tr>
-                <td>Error</td>
                 <td th:text="${error}"/>
-            </tr>
-            <tr>
-                <td>Status</td>
                 <td th:text="${status}"/>
-            </tr>
-            <tr>
-                <td>Message</td>
                 <td th:text="${message}"/>
             </tr>
         </table>
