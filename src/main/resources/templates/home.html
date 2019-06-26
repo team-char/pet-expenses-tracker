@@ -3,13 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <title>FiDo Expense Tracker | Home</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+        <link href="/styles.css" rel="stylesheet">
     </head>
 
     <body>
 
         <div th:replace="fragments/header :: header">...</div>
-        <p>Welcome to FiDo Home</p>
-        <p>Keep track of your spending on your pet!!!</p>
+        <h1 class="pageTitle">Fi-do home</h1>
+
+        <div class="homePageImageDiv">
+            <img src="https://media0.giphy.com/media/6t7kRkjau607u/giphy.gif"/>
+        </div>
+
+        <div class="homePageContainer">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Background</h5>
+                    <p class="card-text">We help you manage your budget for pet and keep track of your expenses. It's as easy as typing a couple of sentences and clicking a button.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Instructions</h5>
+                    <p class="card-text">If you are a member already, please login. If you are not a member yet, please signup and start maximizing your budget.</p>
+                </div>
+            </div>
+        </div>
 
     </body>
 

@@ -3,26 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <title>FiDo Error</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+        <link href="/styles.css" rel="stylesheet">
     </head>
 
     <body>
         <div th:replace="fragments/header :: header">...</div>
-        <h1>Error! Please see below for details:</h1>
-        <table>
+        <h1 class="pageTitle">Error!</h1>
+        <table class="pure-table">
+
+            <thead>
+                <tr>
+                    <th>Path</th>
+                    <th>Error</th>
+                    <th>Status</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+
             <tr>
-                <td>Path</td>
                 <td th:text="${path}"/>
-            </tr>
-            <tr>
-                <td>Error</td>
                 <td th:text="${error}"/>
-            </tr>
-            <tr>
-                <td>Status</td>
                 <td th:text="${status}"/>
-            </tr>
-            <tr>
-                <td>Message</td>
                 <td th:text="${message}"/>
             </tr>
         </table>

@@ -1,0 +1,75 @@
+//Resource: https://getbootstrap.com/docs/4.1/components/card/#body
+//Resource: https://purecss.io/
+
+
+.custom-menu-wrapper {
+          background-color: #808080;
+          margin-bottom: 2.5em;
+          white-space: nowrap;
+          position: relative;
+      }
+
+      .custom-menu {
+          display: inline-block;
+          width: 100%;
+          vertical-align: middle;
+      }
+
+     .pure-menu-link{
+          color: white;
+      }
+
+     .pure-menu-link:hover{
+          color: black;
+      }
+
+
+      .custom-menu-screen {
+          background-color: rgba(0, 0, 0, 0.5);
+          height: 3em;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          z-index: -1;
+      }
+
+
+    body{
+        background: #d4a2a2
+    }
+
+    .aboutUsContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width:90%;
+        margin: 0 auto;
+    }
+
+    .pageTitle{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .homePageContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width:80%;
+        margin: 0 auto;
+    }
+
+    .homePageImageDiv{
+        width: 480px;
+        margin: 0 auto;
+    }
+
+    .logoImage{
+    margin-top: -7px;
+    height: 45px;
+    width: 55px;
+    }
+
+    .bioName{
+        text-align: center;
+    }

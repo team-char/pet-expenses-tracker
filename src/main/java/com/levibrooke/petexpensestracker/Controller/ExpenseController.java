@@ -42,13 +42,14 @@ public class ExpenseController {
         return new RedirectView("/dashboard");
     }
 
-//    @GetMapping("/all-expense")
-//    public String getAllExpensePage(Principal p, Model m){
-//        List<Expense> expenseList = (List<Expense>) expenseRepository.findAll();
-//        m.addAttribute(expenseList);
-//        HomeController.isUserLoggedIn(p, m);
-//        return "/all-expense";
-//    }
+    @GetMapping("/all-expense")
+    public String getAllExpensePage(Principal p, Model m){
+        List<Expense> expenseList = (List<Expense>) expenseRepository.findAll();
+        m.addAttribute(expenseList);
+        HomeController.isUserLoggedIn(p, m);
+        return "/all-expense";
+    }
+
 
 
 }
