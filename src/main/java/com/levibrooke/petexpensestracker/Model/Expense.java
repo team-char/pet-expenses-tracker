@@ -78,4 +78,7 @@ public class Expense {
 
     public void setCategoryName(String categoryName) { this.categoryName = categoryName; }
 
+    public void setUpdatedAt(Date updatedAt) {this.updatedAt = updatedAt;
+    }
+
 }
