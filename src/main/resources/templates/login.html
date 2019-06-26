@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>FiDo Expense Tracker | Log in</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link href="/styles.css" rel="stylesheet">
 </head>
 <body>
     <div th:replace="fragments/header :: header">...</div>
     <h1>Log in</h1>
-    <form action="/login" method="POST">
+    <form class="pure-form pure-form-stacked" action="/login" method="POST">
         <input name="username" placeholder="username" />
-        <input name="password" placeholder="password" />
-        <input type="submit" />
+        <input type="password" name="password" placeholder="password" />
+        <input class="pure-button pure-button-primary" type="submit" />
     </form>
 </body>
 </html>

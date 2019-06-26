@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>FiDo Expense Tracker | Create An Expense</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link href="/styles.css" rel="stylesheet">
 </head>
 
 <body>
 
     <div th:replace="fragments/header :: header">...</div>
-    <h1>Form Expense</h1>
-    <form action="/create-expense" method="POST">
+    <fieldset>
+    <label>Expense Form </label>
+    <form class="pure-form pure-form-stacked" action="/create-expense" method="POST">
 
         <label>Select Category Expense</label>
         <select name="categoryName">
@@ -29,9 +34,10 @@
 
         <label for="expenseDate">Date Of Expense</label>
         <input type="date" id="expenseDate" min="0.00" max="99999.00" step="0.01" name="expenseDate" required>
-        <button type="submit">Submit</button>
+        <button class="pure-button pure-button-primary" type="submit">Submit</button>
 
     </form>
+    </fieldset>
 
 </body>
 

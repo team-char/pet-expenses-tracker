@@ -1,0 +1,58 @@
+.custom-menu-wrapper {
+          background-color: #808080;
+          margin-bottom: 2.5em;
+          white-space: nowrap;
+          position: relative;
+      }
+
+      .custom-menu {
+          display: inline-block;
+          width: auto;
+          vertical-align: middle;
+          -webkit-font-smoothing: antialiased;
+      }
+
+      .custom-menu .pure-menu-link,
+      .custom-menu .pure-menu-heading {
+          color: white;
+      }
+
+      .custom-menu .pure-menu-link:hover,
+      .custom-menu .pure-menu-heading:hover {
+          color: grey;
+      }
+
+
+      .custom-menu-screen {
+          background-color: rgba(0, 0, 0, 0.5);
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          -ms-transition: all 0.5s;
+          transition: all 0.5s;
+          height: 3em;
+          width: 70em;
+          position: absolute;
+          top: 0;
+          z-index: -1;
+      }
+
+      .custom-menu-screen {
+          -webkit-transform: translateY(-44px);
+          -moz-transform: translateY(-44px);
+          -ms-transform: translateY(-44px);
+          transform: translateY(-44px);
+      }
+
+
+    .aboutUsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width:90%;
+    margin: 0 auto;
+    }
+
+    .pageTitle{
+    text-align: center;
+    padding-bottom: 20px;
+    }

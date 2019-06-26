@@ -1,18 +1,24 @@
 <header class="header" th:fragment="header" xmlns:th="http://www.thymeleaf.org">
 
-    <nav class="navBar">
 
-        <ul>
-            <li><a href="/">Fido Home</a></li>
-            <li th:if="${loggedInName}"><a href="/user" th:text="${loggedInName}"></a></li>
-            <li th:if="${loggedInName}"><a href="/create-expense">Add Expense</a></li>
-            <li th:if="${loggedInName}"><a href="/logout">Logout</a></li>
-            <li th:if="${loggedInName} == false"><a href="/login">Login</a></li>
-            <li th:if="${loggedInName} == false"><a href="/sign-up">Signup</a></li>
-            <li><a href="/about-us">About Us</a></li>
-        </ul>
+    <div class="custom-menu-wrapper">
 
-    </nav>
+    <div class="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
+        <div class="custom-menu-screen"></div>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a class="pure-menu-link" href="/">Fido Home</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/user" th:text="${loggedInName}"></a></li>
+                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/create-expense">Add Expense</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/logout">Logout</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName} == false"><a class="pure-menu-link" href="/login">Login</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName} == false"><a class="pure-menu-link" href="/sign-up">Signup</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="/about-us">About Us</a></li>
+            </ul>
+
+        </div>
+    </div>
+
 
 </header>
 
