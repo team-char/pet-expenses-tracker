@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class HomeController {
@@ -64,6 +65,20 @@ public class HomeController {
             }
         }
 
+        HashMap<String, Double> hashMap = new HashMap<>();
+        for(Expense e : user.getExpenses()){
+            if(!hashMap.containsKey(e.getCategoryName())){
+                hashMap.put(e.getCategoryName(),  e.getAmount());
+            } else{
+                hashMap.put(e.getCategoryName(), hashMap.get(e.getCategoryName()) + e.getAmount());
+            }
+        }
+
+        for(String e : hashMap.keySet()){
+            System.out.println(hashMap.get(e));
+        }
+
+        m.addAttribute("totalCategoryAmount", hashMap);
         m.addAttribute("totalAmount", amountList);
         m.addAttribute("userExpenses", user.getExpenses());
         m.addAttribute("sortByMonthList", sortByMonthExpenseList);
