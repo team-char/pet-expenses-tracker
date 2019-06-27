@@ -54,13 +54,9 @@ public class Expense {
 
     public Date getCreatedAt() { return createdAt; }
 
-    public Date getExpenseDate() {
-        return expenseDate;
-    }
+    public Date getExpenseDate() { return expenseDate; }
 
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
+    public Date getUpdatedAt() { return updatedAt; }
 
     public String getDescription() { return description; }
 
@@ -78,7 +74,7 @@ public class Expense {
 
     public void setCategoryName(String categoryName) { this.categoryName = categoryName; }
 
-    public void setUpdatedAt(Date updatedAt) {this.updatedAt = updatedAt;
-    }
+    public void setExpenseDate(Date expenseDate) { this.expenseDate = expenseDate; }
 
+    public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
 }
