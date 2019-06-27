@@ -73,3 +73,12 @@
     .bioName{
         text-align: center;
     }
+
+    #editButton{
+    background-color:grey;
+    }
+
+    .button-container{
+        width: 100px;
+        display: flex;
+    }
