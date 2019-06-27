@@ -1,0 +1,212 @@
+/* Resource: https://getbootstrap.com/docs/4.1/components/card/#body */
+
+/* Resource: https://purecss.io/ */
+
+/* global */
+* {
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+body {
+    background: #EDF2F4;
+}
+
+/* header */
+.header {
+    background-color: #ffffff;
+    margin-bottom: 2.5em;
+    white-space: nowrap;
+    position: relative;
+}
+.logoImage {
+    height: 75px;
+    width: 75px;
+}
+.pure-menu-link {
+    color: #000000;
+}
+
+.pure-menu-link:hover {
+    color: black;
+}
+
+.pure-menu-horizontal {
+    width: 90%;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.pure-menu-horizontal .pure-menu-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* home page */
+.pageTitle {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.home-container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80%;
+    margin: 0 auto;
+}
+.home-instructions {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    width: 40%;
+    margin: 0 5%;
+}
+.home-instructions .card {
+    width: 20rem;
+}
+.home-img {
+    width: 40%;
+    margin: 0 5%;
+}
+
+/* about page */
+.aboutUsContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 10%;
+}
+.about-row {
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 40px;
+}
+.aboutUsContainer .card {
+    width: 30%;
+}
+.aboutUsContainer .card:nth-child(odd) {
+    margin: 0 5% 0 15%;
+}
+.aboutUsContainer .card:nth-child(even) {
+    margin: 0 15% 0 5%;
+}
+.bioName {
+    text-align: center;
+    margin: 10px;
+}
+/* bootstrap stuff for about page */
+.aboutUsContainer .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.aboutUsContainer .card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+.aboutUsContainer .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+/* sign-up page */
+.signup-container {
+    width: 30%;
+    margin: 0 auto;
+}
+
+/* login page */
+.login-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* create-expense page */
+.create-expense-container {
+    width: 30%;
+    margin: 0 auto;
+    /* text-align: center; */
+}
+
+/* edit-expense page */
+.edit-expense-container {
+    width: 30%;
+    margin: 0 auto;
+}
+
+#deleteButton {
+    background-color: #EF3340;
+}
+
+/* all-expenses page */
+.button-container {
+    width: 100px;
+    display: flex;
+}
+
+#editButton {
+    margin-right: 10px;
+}
+
+#expense-list {
+    list-style: none;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#update-expense-table {
+    width: 100%;
+}
+
+/* dashboard page */
+.dashboard-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.dashboard-controls {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.button-secondary {
+    background: rgba(35, 142, 96);
+    color: #ffffff;
+}
+.button-secondary:hover {
+    background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+}
+.data-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.list {
+    width: 50%;
+}
+.chart {
+    width: 45%;
+    margin-left: 5%;
+}
+.pure-table th {
+    text-align: left;
+}
+.canvasjs-chart-toolbar {
+    display: none;
+}
