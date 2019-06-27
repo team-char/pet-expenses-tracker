@@ -1,54 +1,16 @@
-<div th:fragment="all-categories" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="all-categories" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
+    <h1>Total Amount by Category</h1>
 
-    <form action="/dashboard/{month}" method="POST">
-        <label for="month">Select Month to View Expense</label>
-        <select name="month" id="month">
-            <option value="01">Jan</option>
-            <option value="02">Feb</option>
-            <option value="03">Mar</option>
-            <option value="04">Apr</option>
-            <option value="05">May</option>
-            <option value="06">Jun</option>
-            <option value="07">Jul</option>
-            <option value="08">Aug</option>
-            <option value="09">Sep</option>
-            <option value="10">Oct</option>
-            <option value="11">Nov</option>
-            <option value="12">Dec</option>
-        </select>
-        <button type="submit">Submit</button>
-    </form>
-
-    <h1>Month Expense</h1>
-    <div th:if="${#lists.isEmpty(sortByMonthList)}">
-        <p>Currently no expenses shown</p>
+    <div th:if="${#lists.isEmpty(totalCategoryAmount)}">
+        <p>No categories to add up!</p>
     </div>
-    <div th:if="${not #lists.isEmpty(sortByMonthList)}">
+    <div th:if="${not #lists.isEmpty(totalCategoryAmount)}">
         <table>
-            <tr th:each="expense : ${sortByMonthList}">
-                <td th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></td>
-                <td th:text="${expense.description}"></td>
-                <td th:text="${#numbers.formatDecimal(expense.amount,0,2)}"></td>
-                <td th:text="${expense.categoryName}"></td>
+            <tr th:each="expense : ${totalCategoryAmount}">
+                <td th:text="${expense.key}"></td>
+                <td>$ <span th:text="${#numbers.formatDecimal(expense.value,0,'COMMA', 2, 'POINT')}"></span></td>
             </tr>
         </table>
     </div>
-    <p th:if="${not #lists.isEmpty(totalAmount)}">
-        This months total amount is: <span th:text="${#aggregates.sum(totalAmount)}"></span>
-    </p>
-
-    <h1>Sort by Category</h1>
-    <p>add content here</p>
-
-    <h1> All Expenses</h1>
-    <table>
-        <tr th:each="expense : ${userExpenses}">
-            <td th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></td>
-            <td th:text="${expense.description}"></td>
-            <td th:text="${#numbers.formatDecimal(expense.amount,0,2)}"></td>
-            <td th:text="${expense.categoryName}"></td>
-        </tr>
-    </table>
-
 </div>
 
