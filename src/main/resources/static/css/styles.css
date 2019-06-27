@@ -14,6 +14,25 @@ body {
     background: #EDF2F4;
 }
 
+/* header */
+.header {
+    background-color: #ffffff;
+    margin-bottom: 2.5em;
+    white-space: nowrap;
+    position: relative;
+}
+.logoImage {
+    height: 75px;
+    width: 75px;
+}
+.pure-menu-link {
+    color: #000000;
+}
+
+.pure-menu-link:hover {
+    color: black;
+}
+
 /* home page */
 .pageTitle {
     text-align: center;
@@ -55,7 +74,6 @@ body {
 }
 .aboutUsContainer .card {
     width: 30%;
-    /* margin: 0 10%; */
 }
 .aboutUsContainer .card:nth-child(odd) {
     margin: 0 5% 0 15%;
@@ -92,23 +110,10 @@ body {
     padding: 1.25rem;
 }
 
-/* header */
-.header {
-    background-color: #ffffff;
-    margin-bottom: 2.5em;
-    white-space: nowrap;
-    position: relative;
-}
-.logoImage {
-    height: 75px;
-    width: 75px;
-}
-.pure-menu-link {
-    color: #000000;
-}
-
-.pure-menu-link:hover {
-    color: black;
+/* sign-up page */
+.signup-container {
+    width: 30%;
+    margin: 0 auto;
 }
 
 #editButton {
