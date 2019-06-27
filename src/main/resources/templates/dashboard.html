@@ -1,8 +1,30 @@
-<h1 xmlns:th="http://www.w3.org/1999/xhtml">Dashboard</h1>
-<a href="/create-expense">Create an Expense</a>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FiDo Expense Tracker | About-Us</title>
 
-<div th:replace="fragments/sort-month-expense :: sort-month-expense"></div>
-<div th:replace="fragments/all-categories :: all-categories"></div>
-<div th:replace="fragments/all-expenses :: all-expenses"></div>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div th:replace="fragments/header :: header">...</div>
+
+    <h1 class="pageTitle">Dashboard</h1>
+    <a href="/create-expense">Create an Expense</a>
+
+    <div th:replace="fragments/sort-month-expense :: sort-month-expense"></div>
+    <div th:replace="fragments/all-categories :: all-categories"></div>
+    <div th:replace="fragments/all-expenses :: all-expenses"></div>
 
 
+    </body>
+
+
+</html>

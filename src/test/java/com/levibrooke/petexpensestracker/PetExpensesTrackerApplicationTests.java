@@ -126,7 +126,7 @@ public class PetExpensesTrackerApplicationTests {
 	@Test
 	@WithMockUser
 	public void testIntegrationExpense() throws Exception{
-		mockMvc.perform(get("/create-expense")).andExpect(content().string(containsString("Form Expense")));
-
+		mockMvc.perform(get("/create-expense")).andExpect(content().string(containsString("Add an expense")));
 	}
+
 }
