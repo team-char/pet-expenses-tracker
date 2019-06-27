@@ -133,7 +133,6 @@ public class PetExpensesTrackerApplicationTests {
 	@WithMockUser
 	public void testIntegrationSuccess() throws Exception{
 		mockMvc.perform(get("/success")).andExpect(content().string(containsString("Success!")));
-
 	}
 
 }

@@ -6,10 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FiDo Expense Tracker | All Expenses</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link href="/styles.css" rel="stylesheet">
 </head>
 <body>
     <div th:replace="fragments/header :: header">...</div>
-    <h1>All Expenses</h1>
+    <h1 class="pageTitle">All Expenses</h1>
     <ul id="expense-list">
         <li th:each="expense : ${expenses}" class="edit-container">
             <div class="card" th:attr="data-id=${expense.id}">
@@ -19,9 +22,9 @@
                 <p>Amount: <span contenteditable="false">$[[${#numbers.formatDecimal(expense.amount, 1, 'DEFAULT', 2, 'DEFAULT')}]]</span></p>
             </div>
             <div class="button-container">
-                <a th:href="@{'/edit-expense/' + ${expense.id}}" class="edit-button">Edit</a>
+                <a th:href="@{'/edit-expense/' + ${expense.id}}" class="pure-button pure-button-primary" id="editButton">Edit</a>
                 <form th:action="@{'/expenses/' + ${expense.id}}" method="POST">
-                    <input type="submit" value="Delete" />
+                    <input class="pure-button pure-button-primary" type="submit" value="Delete" />
                 </form>
             </div>
         </li>
