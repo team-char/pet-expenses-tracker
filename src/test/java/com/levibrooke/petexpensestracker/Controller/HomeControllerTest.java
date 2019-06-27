@@ -11,6 +11,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.RequestPostProcessor;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -19,6 +20,7 @@ import static org.junit.Assert.*;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*;
 
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
@@ -48,18 +50,21 @@ public class HomeControllerTest {
                 .build();
     }
 
+//    public static RequestPostProcessor testUser(){
+//        return user("user").password("pass").roles("ADMIN");
+//    }
+
     @Test
     public void testIntegrationAbout() throws Exception{
         mockMvc.perform(get("/about-us")).andExpect(content().string(containsString("About Us")));
     }
 
-//    @WithMockUser(username="spring")
+//    @WithMockUser
 //    @Test
-//
-//
 //    public void testIntegrationDashboard() throws Exception{
-//        mockMvc.perform(get("/dashboard")).andExpect(content().string(containsString("Dashboard")));
+////        mockMvc.perform(get("/dashboard")).andExpect(content().string(containsString("Dashboard")));
+//        mockMvc.perform(get("/dashboard").with(testUser()));
 //    }
-//
+
 
 }
