@@ -55,7 +55,19 @@ public class HomeController {
         AppUser user = appUserRepository.findByUsername(p.getName());
         List<Expense> userExpenses = user.getExpenses();
 
+        //build out monthly charts
+        List<Expense> sortByMonthExpenseList = new ArrayList<>();
+        DateFormat dateFormat = new SimpleDateFormat("MM");
+        for(Expense e : userExpenses){
+            String strDate = dateFormat.format(e.getExpenseDate());
+            if(month.equals(strDate)){
+                sortByMonthExpenseList.add(e);
+            }
+        }
+
+
         m.addAttribute("allExpenseDataPoints", getDataPoints(getTotalAmountsByCategory(userExpenses)));
+        m.addAttribute("monthDataPoints", getDataPoints(getTotalAmountsByCategory(sortByMonthExpenseList)));
 
         m.addAttribute("totalAmountByMonth", getTotalAmountByMonthExpense(userExpenses, month));
         m.addAttribute("currentMonth", getMonths().getOrDefault(month, ""));
