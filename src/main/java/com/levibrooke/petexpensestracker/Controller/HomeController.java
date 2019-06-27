@@ -1,9 +1,6 @@
 package com.levibrooke.petexpensestracker.Controller;
 
-import com.levibrooke.petexpensestracker.Model.AppUser;
-import com.levibrooke.petexpensestracker.Model.AppUserRepository;
-import com.levibrooke.petexpensestracker.Model.Expense;
-import com.levibrooke.petexpensestracker.Model.ExpenseRepository;
+import com.levibrooke.petexpensestracker.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.security.Principal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class HomeController {
@@ -45,10 +39,13 @@ public class HomeController {
     public String getDashboardPage(Principal p, Model m){
         isUserLoggedIn(p, m);
         AppUser user = appUserRepository.findByUsername(p.getName());
+        List<Expense> userExpenses = user.getExpenses();
+
+        m.addAttribute("allExpenseDataPoints", getDataPoints(getTotalAmountsByCategory(userExpenses)));
         m.addAttribute("monthList", getMonths());
-        m.addAttribute("totalCategoryAmount", getTotalAmountsByCategory(user.getExpenses()));
-        m.addAttribute("totalAmount", getTotalAmountExpenses(user.getExpenses()));
-        m.addAttribute("userExpenses", user.getExpenses());
+        m.addAttribute("totalCategoryAmount", getTotalAmountsByCategory(userExpenses));
+        m.addAttribute("totalAmount", getTotalAmountExpenses(userExpenses));
+        m.addAttribute("userExpenses", userExpenses);
         return "dashboard";
     }
 
@@ -56,25 +53,43 @@ public class HomeController {
     public String postDashboardPage(@RequestParam String month, Principal p, Model m){
         isUserLoggedIn(p, m);
         AppUser user = appUserRepository.findByUsername(p.getName());
-        m.addAttribute("totalAmountByMonth", getTotalAmountByMonthExpense(user.getExpenses(), month));
+        List<Expense> userExpenses = user.getExpenses();
+
+        m.addAttribute("allExpenseDataPoints", getDataPoints(getTotalAmountsByCategory(userExpenses)));
+
+        m.addAttribute("totalAmountByMonth", getTotalAmountByMonthExpense(userExpenses, month));
         m.addAttribute("currentMonth", getMonths().getOrDefault(month, ""));
         m.addAttribute("monthList", getMonths());
-        m.addAttribute("totalCategoryAmount", getTotalAmountsByCategory(user.getExpenses()));
-        m.addAttribute("totalAmount", getTotalAmountExpenses(user.getExpenses()));
-        m.addAttribute("userExpenses", user.getExpenses());
-        m.addAttribute("sortByMonthList", getSortedByMonthExpense(user.getExpenses(), month));
+        m.addAttribute("totalCategoryAmount", getTotalAmountsByCategory(userExpenses));
+        m.addAttribute("totalAmount", getTotalAmountExpenses(userExpenses));
+        m.addAttribute("userExpenses", userExpenses);
+        m.addAttribute("sortByMonthList", getSortedByMonthExpense(userExpenses, month));
         return "dashboard";
     }
 
     //Helper Methods
+    private DataPoint[] getDataPoints(HashMap<String, Double> hashMap){
+        Set<String> keys = hashMap.keySet();
+
+        DataPoint[] dataPoints = new DataPoint[keys.size()];
+        int counter=0;
+        for(String key : keys){
+            DataPoint d = new DataPoint(key, hashMap.get(key));
+            dataPoints[counter] = d;
+            counter += 1;
+        }
+        return  dataPoints;
+    }
+
     private List getTotalAmountExpenses(List<Expense> expenseList){
         List<Double> totalAmountList = new ArrayList<>();
-        DateFormat dateFormat = new SimpleDateFormat("MM");
+//        DateFormat dateFormat = new SimpleDateFormat("MM");
         for(Expense e : expenseList){
                 totalAmountList.add(e.getAmount());
         }
         return totalAmountList;
     }
+
     private Double getTotalAmountByMonthExpense(List<Expense> expenseList, String month) {
         DateFormat dateFormat = new SimpleDateFormat("MM");
         double sum = 0.0;
@@ -98,6 +113,7 @@ public class HomeController {
         }
         return sortByMonthExpenseList;
     }
+
     private HashMap<String, Double> getTotalAmountsByCategory(List<Expense> expenseList){
         HashMap<String, Double> hashMap = new HashMap<>();
         for(Expense e : expenseList){

@@ -1,0 +1,46 @@
+<div th:fragment="all-pie-chart" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
+
+    <div th:if="${allExpenseDataPoints} == null">
+        <p>You have no data.</p>
+    </div>
+    <div th:if="${allExpenseDataPoints} != null">
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            window.onload = function() {
+               var dataPoints = /*[[${allExpenseDataPoints}]]*/ 'default';
+               dataPoints.forEach(myFunction);
+               function myFunction(value, index, array){
+                console.log(value);
+               }
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                exportEnabled: true,
+                animationEnabled: true,
+                title: {
+                    text: "All Expenses By Category"
+                },
+                data: [{
+                    type: "pie",
+                    startAngle: 25,
+                    toolTipContent: "<b>{label}</b>: {y}%",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 16,
+                    indexLabel: "{label} - ${y}",
+                    dataPoints: /*[[${allExpenseDataPoints}]]*/ []
+                }]
+            });
+            chart.render();
+            }
+             /*]]>*/
+        </script>
+
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+        <!--This displays the chart -->
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </div>
+</div>
+
