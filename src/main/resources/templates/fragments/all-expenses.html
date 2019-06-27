@@ -1,0 +1,24 @@
+<div th:fragment="all-expenses" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
+    <h1> All Expenses</h1>
+
+    <div th:if="${#lists.isEmpty(userExpenses)}">
+        <p>Expenses List is empty.</p>
+    </div>
+    <div th:if="${not #lists.isEmpty(userExpenses)}">
+        <table>
+            <tr th:each="expense : ${userExpenses}">
+                <td th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></td>
+                <td th:text="${expense.description}"></td>
+                <td>$ <span th:text="${#numbers.formatDecimal(expense.amount,0,'COMMA', 2, 'POINT')}"></span></td>
+                <td th:text="${expense.categoryName}"></td>
+            </tr>
+        </table>
+
+        <h3>Total Amount Expense</h3>
+        <p th:if="${not #lists.isEmpty(totalAmount)}">
+            The total amount is $ <span
+                th:text="${#aggregates.sum(totalAmount)}"></span>
+        </p>
+    </div>
+</div>
+
