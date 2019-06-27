@@ -116,6 +116,13 @@ body {
     margin: 0 auto;
 }
 
+/* login page */
+.login-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 #editButton {
     background-color: grey;
 }

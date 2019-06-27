@@ -10,12 +10,21 @@
 </head>
 <body>
     <div th:replace="fragments/header :: header">...</div>
-    <h1 class="pageTitle">Log in</h1>
-    <p>Please enter your credentials below:</p>
-    <form class="pure-form pure-form-stacked" action="/login" method="POST">
-        <input name="username" placeholder="username" />
-        <input type="password" name="password" placeholder="password" />
-        <input class="pure-button pure-button-primary" type="submit" />
-    </form>
+
+    <main class="login-container">
+        <h1 class="pageTitle">Log in</h1>
+        <p>Please enter your credentials below:</p>
+
+        <form class="pure-form pure-form" action="/login" method="POST">
+
+            <fieldset>
+                <input name="username" placeholder="username" />
+                <input type="password" name="password" placeholder="password" />
+                <input class="pure-button pure-button-primary" type="submit" />
+            </fieldset>
+
+        </form>
+
+    </main>
 </body>
 </html>
