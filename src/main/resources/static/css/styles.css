@@ -136,33 +136,64 @@ body {
     margin: 0 auto;
 }
 
-#editButton {
-    background-color: grey;
+#deleteButton {
+    background-color: #EF3340;
 }
 
-
-
 /* all-expenses page */
-
 .button-container {
     width: 100px;
     display: flex;
 }
 
-#editButton{
+#editButton {
     margin-right: 10px;
 }
 
-#expense-list{
+#expense-list {
     list-style: none;
     width: 60%;
     margin: 0 auto;
 }
 
-#update-expense-table{
+#update-expense-table {
     width: 100%;
 }
 
-#all-expense-category{
-    text-align: center;
+/* dashboard page */
+.dashboard-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.dashboard-controls {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.button-secondary {
+    background: rgba(35, 142, 96);
+    color: #ffffff;
+}
+.button-secondary:hover {
+    background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+}
+.data-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.list {
+    width: 50%;
+}
+.chart {
+    width: 45%;
+    margin-left: 5%;
+}
+.pure-table th {
+    text-align: left;
+}
+.canvasjs-chart-toolbar {
+    display: none;
 }

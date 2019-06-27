@@ -1,9 +1,9 @@
-<div th:fragment="month-pie-chart" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
+<section class="chart" th:fragment="month-pie-chart" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
 
     <div th:if="${monthDataPoints} == null">
         <p>No chart data for this month.</p>
     </div>
-    <div th:if="${monthDataPoints} != null">
+    <!-- <div th:if="${monthDataPoints} != null"> -->
 
         <script th:inline="javascript">
             /*<![CDATA[*/
@@ -23,7 +23,7 @@
                 exportEnabled: true,
                 animationEnabled: true,
                 title: {
-                    text: "Monthly Expenses By Category"
+                    text: ""
                 },
                 data: [{
                     type: "pie",
@@ -31,10 +31,11 @@
                     toolTipContent: "<b>{label}</b>: {y}%",
                     showInLegend: "true",
                     legendText: "{label}",
-                    indexLabelFontSize: 16,
+                    indexLabelFontSize: 15,
                     indexLabel: "{label} - ${y}",
                     dataPoints: /*[[${monthDataPoints}]]*/ []
-                }]
+                }],
+                backgroundColor: "#EDF2F4"
             });
             myMonthChart.render();
             }
@@ -46,7 +47,6 @@
 
 
         <!--This displays the chart -->
-        <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
-    </div>
-</div>
-
+        <div th:if="${monthDataPoints} != null" id="chartContainer1" style="height: 300px; width: 100%;"></div>
+    <!-- </div> -->
+</section>

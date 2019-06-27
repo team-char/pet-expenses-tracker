@@ -99,7 +99,7 @@ public class ExpenseController {
     public String deleteExpense(@PathVariable Long id) {
         System.out.println(id);
         expenseRepository.deleteById(id);
-        return "redirect:/success";
+        return "redirect:/dashboard";
     }
 
     // GET: success page

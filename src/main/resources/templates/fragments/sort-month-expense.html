@@ -1,40 +1,50 @@
 <div th:fragment="sort-month-expense" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
-    <form action="/dashboard/{month}" method="POST">
-        <label for="month">Select Month to View Expense</label>
-        <select name="month" id="month">
-            <option disabled selected value> -- select a month -- </option>
-            <option
-                    th:each="month : ${monthList}"
-                    th:value="${month.key}"
-                    th:text="${month.value}">
-            </option>
-        </select>
-        <button type="submit">Submit</button>
-    </form>
 
-    <h1> Monthly Expense</h1>
+    <header class="dashboard-controls">
+        <form class="pure-form" action="/dashboard/{month}" method="POST">
+            <fieldset>
+                <!-- <label for="month">View Month</label> -->
+                <select name="month" id="month">
+                    <option disabled selected value> -- select a month -- </option>
+                    <option th:each="month : ${monthList}" th:value="${month.key}" th:text="${month.value}">
+                    </option>
+                </select>
+                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+            </fieldset>
+        </form>
+        <a href="/create-expense"><button class="pure-button button-secondary">Create an Expense</button></a>
+    </header>
 
-    <div th:if="${#lists.isEmpty(sortByMonthList)}">
-        <p>Currently no expenses shown</p>
+    <div class="data-container">
+        <section class="list">
+            <h1>Expense List</h1>
+    
+            <div th:if="${#lists.isEmpty(sortByMonthList)}">
+                <p>Currently no expenses shown</p>
+            </div>
+            <table th:if="${not #lists.isEmpty(sortByMonthList)}" class="pure-table pure-table-horizontal pure-table-striped">
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+                <tr th:each="expense : ${sortByMonthList}">
+                    <td th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></td>
+                    <td th:text="${expense.description}"></td>
+                    <td th:text="${expense.categoryName}"></td>
+                    <td>$ <span th:text="${#numbers.formatDecimal(expense.amount,0,'COMMA', 2, 'POINT')}"></span></td>
+                </tr>
+            </table>
+            <h3 th:if="${totalAmountByMonth == null}">
+                Monthly Total Amount is $0.00
+            </h3>
+            <h3 th:if="${totalAmountByMonth != null}">
+                <span th:text="${currentMonth}"></span>'s total amount is $ <span
+                    th:text="${#numbers.formatDecimal(totalAmountByMonth, 0,'COMMA', 2, 'POINT')}"></span>
+            </h3>
+        </section>
+
+        <div th:replace="fragments/month-expense-chart :: month-pie-chart"></div>
     </div>
-    <div th:if="${not #lists.isEmpty(sortByMonthList)}">
-        <table>
-            <tr th:each="expense : ${sortByMonthList}">
-                <td th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></td>
-                <td th:text="${expense.description}"></td>
-                <td>$ <span th:text="${#numbers.formatDecimal(expense.amount,0,'COMMA', 2, 'POINT')}"></span></td>
-                <td th:text="${expense.categoryName}"></td>
-            </tr>
-        </table>
-    </div>
-    <h3>Monthly Total Amount</h3>
-    <p th:if="${totalAmountByMonth == null}">
-        Monthly Total Amount is $0.00
-    </p>
-    <p th:if="${totalAmountByMonth != null}">
-        <span th:text="${currentMonth}"></span>'s total amount is $ <span
-            th:text="${#numbers.formatDecimal(totalAmountByMonth, 0,'COMMA', 2, 'POINT')}"></span>
-    </p>
-
 </div>
-

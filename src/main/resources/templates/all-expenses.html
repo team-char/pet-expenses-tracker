@@ -28,10 +28,12 @@
                         <td><span contenteditable="false">[[${expense.categoryName}]]</span></td>
                         <td><span contenteditable="false" th:text="${#dates.format(expense.expenseDate, 'MM/dd/yyyy')}"></span></td>
                         <td><span contenteditable="false">$[[${#numbers.formatDecimal(expense.amount, 1, 'DEFAULT', 2, 'DEFAULT')}]]</span></td>
-                        <td> <span class="button-container"><a th:href="@{'/edit-expense/' + ${expense.id}}" class="pure-button pure-button-primary" id="editButton">Edit</a>
-                        <form th:action="@{'/expenses/' + ${expense.id}}" method="POST">
-                            <input class="pure-button pure-button-primary" type="submit" value="Delete" />
-                        </form> </span> </td>
+                        <td><span class="button-container">
+                            <a th:href="@{'/edit-expense/' + ${expense.id}}" class="pure-button pure-button-primary" id="editButton">Edit</a>
+                            <form th:action="@{'/expenses/' + ${expense.id}}" method="POST">
+                                <input class="pure-button pure-button-primary" id="deleteButton" type="submit" value="Delete" />
+                            </form> 
+                        </span></td>
                     </tr>
                 </table>
             </div>

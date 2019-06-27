@@ -6,8 +6,6 @@
 
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link href="/css/styles.css" rel="stylesheet">
 
 </head>
@@ -16,17 +14,17 @@
 
     <div th:replace="fragments/header :: header">...</div>
 
-    <h1 class="pageTitle">Dashboard</h1>
-    <a href="/create-expense">Create an Expense</a>
-
-    <div th:replace="fragments/sort-month-expense :: sort-month-expense"></div>
-    <!--month chart-->
-    <div th:replace="fragments/month-expense-chart :: month-pie-chart"></div>
-    <div th:replace="fragments/all-categories :: all-categories"></div>
-    <div th:replace="fragments/all-expenses :: all-expenses"></div>
-    <!--All expense chart-->
-    <!--<div th:replace="fragments/all-expense-chart :: all-pie-chart"></div>-->
-
+    <main class="dashboard-container">
+        <h1 class="pageTitle">Dashboard</h1>
+    
+        <div th:replace="fragments/sort-month-expense :: sort-month-expense"></div>
+        <!--month chart-->
+        <!-- <div th:replace="fragments/month-expense-chart :: month-pie-chart"></div> -->
+        <!--<div th:replace="fragments/all-categories :: all-categories"></div>-->
+        <!--<div th:replace="fragments/all-expenses :: all-expenses"></div>-->
+        <!--All expense chart-->
+        <!--<div th:replace="fragments/all-expense-chart :: all-pie-chart"></div>-->
+    </main>
 </body>
 
 </html>
