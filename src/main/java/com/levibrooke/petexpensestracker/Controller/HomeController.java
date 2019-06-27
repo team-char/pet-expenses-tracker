@@ -36,8 +36,6 @@ public class HomeController {
             m.addAttribute("loggedInName", false);
         }
     }
-
-
 }
 
 

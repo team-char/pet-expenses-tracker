@@ -26,13 +26,13 @@ public class AppUserController {
     @Autowired
     PasswordEncoder bCryptPasswordEncoder;
 
-    // GET -> Sign up page
+    // GET: sign up page
     @GetMapping("/sign-up")
     public String getSignUp() {
         return "sign-up";
     }
 
-    // POST -> Send new user to database
+    // POST: send new user to database
     @PostMapping("/sign-up")
     public RedirectView createUser(String username, String password, String petName, String petType) {
 
@@ -45,7 +45,7 @@ public class AppUserController {
         return new RedirectView("/");
     }
 
-    // GET -> Login page
+    // GET: login page
     @GetMapping("/login")
     public String getLoginPage() {
         return "login";

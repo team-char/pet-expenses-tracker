@@ -78,4 +78,11 @@ public class Expense {
 
     public void setCategoryName(String categoryName) { this.categoryName = categoryName; }
 
+    public void setExpenseDate(Date expenseDate) {
+        this.expenseDate = expenseDate;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }

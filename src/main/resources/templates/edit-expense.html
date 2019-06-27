@@ -8,18 +8,24 @@
     <title>FiDo Expense Tracker | Edit Expense</title>
 </head>
 <body>
-    <form action="/edit-expense" method="PUT">
+    <div th:replace="fragments/header :: header">...</div>
+    <h1>Edit Expense</h1>
+    <form th:action="@{'/edit/' + ${expense.id}}" method="PUT">
         <label for="description">
-            <input type="text" name="description" id="description" placeholder="description" value="${expense.description}" />
+            <input type="text" name="description" id="description" placeholder="description" th:value="${expense.description}" />
         </label>
         <label for="categoryName">
-            <input type="text" name="categoryName" id="categoryName" placeholder="categoryName" value="${expense.categoryName}" />
+            <select name="categoryName" id="categoryName" th:value="${expense.categoryName}">
+
+                <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}" th:selected="${cat == expense.categoryName}"></option>
+
+            </select>
         </label>
         <label for="expenseDate">
-            <input type="text" name="expenseDate" id="expenseDate" placeholder="expense date" value="${expense.expenseDate}" />
+            <input type="text" name="expenseDate" id="expenseDate" placeholder="expense date" th:value="${#dates.format(expense.expenseDate, 'MM/dd/yyyy')}" />
         </label>
         <label for="amount">
-            <input type="text" name="amount" id="amount" placeholder="amount" value="${expense.amount}" />
+            <input type="text" name="amount" id="amount" placeholder="amount" th:value="${#numbers.formatDecimal(expense.amount, 1, 'DEFAULT', 2, 'DEFAULT')}" />
         </label>
         <input type="submit" />
     </form>
