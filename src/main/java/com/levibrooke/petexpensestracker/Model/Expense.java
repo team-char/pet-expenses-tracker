@@ -77,6 +77,4 @@ public class Expense {
     public void setExpenseDate(Date expenseDate) { this.expenseDate = expenseDate; }
 
     public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
-
-    public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
 }
