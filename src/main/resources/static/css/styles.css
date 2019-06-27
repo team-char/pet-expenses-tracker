@@ -123,6 +123,13 @@ body {
     text-align: center;
 }
 
+/* create-expense page */
+.create-expense-container {
+    width: 30%;
+    margin: 0 auto;
+    /* text-align: center; */
+}
+
 #editButton {
     background-color: grey;
 }
