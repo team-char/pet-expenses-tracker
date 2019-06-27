@@ -33,6 +33,19 @@ body {
     color: black;
 }
 
+.pure-menu-horizontal {
+    width: 90%;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.pure-menu-horizontal .pure-menu-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* home page */
 .pageTitle {
     text-align: center;

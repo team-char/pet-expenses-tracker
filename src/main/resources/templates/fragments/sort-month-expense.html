@@ -5,8 +5,10 @@
             <fieldset>
                 <!-- <label for="month">View Month</label> -->
                 <select name="month" id="month">
-                    <option disabled selected value> -- select a month -- </option>
-                    <option th:each="month : ${monthList}" th:value="${month.key}" th:text="${month.value}">
+
+                    <option disabled value selected> -- select a month -- </option>
+
+                    <option th:each="month : ${monthList}" th:value="${month.key}" th:text="${month.value}" th:selected="${month.value == currentMonth}">
                     </option>
                 </select>
                 <button type="submit" class="pure-button pure-button-primary">Submit</button>
