@@ -12,6 +12,7 @@
                 <li class="pure-menu-item"><a class="pure-menu-link" href="/about-us">About Us</a></li>
                 <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/create-expense">Add Expense</a></li>
                 <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/dashboard">Dashboard</a></li>
+                <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/all-expenses">All Expenses</a></li>
                 <li class="pure-menu-item" th:if="${loggedInName}"><a class="pure-menu-link" href="/logout">Logout</a></li>
                 <li class="pure-menu-item" th:if="${loggedInName} == false"><a class="pure-menu-link" href="/sign-up">Signup</a></li>
                 <li class="pure-menu-item" th:if="${loggedInName} == false"><a class="pure-menu-link" href="/login">Login</a></li>

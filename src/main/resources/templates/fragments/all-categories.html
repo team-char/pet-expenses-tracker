@@ -1,5 +1,7 @@
 <div th:fragment="all-categories" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
+    <h1>Total Amount by Category</h1>
 
+<<<<<<< HEAD
     <form action="/dashboard/{month}" method="POST">
         <label for="month">Select Month to View Expense</label>
         <select name="month" id="month">
@@ -15,38 +17,18 @@
     <h1>Month Expense</h1>
     <div th:if="${#lists.isEmpty(sortByMonthList)}">
         <p>Currently no expenses shown</p>
+=======
+    <div th:if="${#lists.isEmpty(totalCategoryAmount)}">
+        <p>No categories to add up!</p>
+>>>>>>> d09548d5d2b4049571754d3cc865e8eb85819dab
     </div>
-    <div th:if="${not #lists.isEmpty(sortByMonthList)}">
+    <div th:if="${not #lists.isEmpty(totalCategoryAmount)}">
         <table>
-            <tr th:each="expense : ${sortByMonthList}">
-                <td th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></td>
-                <td th:text="${expense.description}"></td>
-                <td>$<span th:text="${#numbers.formatDecimal(expense.amount,0,2)}"></span></td>
-                <td th:text="${expense.categoryName}"></td>
+            <tr th:each="expense : ${totalCategoryAmount}">
+                <td th:text="${expense.key}"></td>
+                <td>$ <span th:text="${#numbers.formatDecimal(expense.value,0,'COMMA', 2, 'POINT')}"></span></td>
             </tr>
         </table>
     </div>
-    <p th:if="${not #lists.isEmpty(totalAmount)}">
-        This months total amount is $<span th:text="${#aggregates.sum(totalAmount)}"></span>
-    </p>
-
-    <h1>Total Amounts by Category</h1>
-    <table>
-        <tr th:each="expense : ${totalCategoryAmount}">
-            <td th:text="${expense.key}"></td>
-            <td th:text="${expense.value}"></td>
-        </tr>
-    </table>
-
-    <h1> All Expenses</h1>
-    <table>
-        <tr th:each="expense : ${userExpenses}">
-            <td th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></td>
-            <td th:text="${expense.description}"></td>
-            <td>$<span th:text="${#numbers.formatDecimal(expense.amount,0,2)}"></span></td>
-            <td th:text="${expense.categoryName}"></td>
-        </tr>
-    </table>
-
 </div>
 
