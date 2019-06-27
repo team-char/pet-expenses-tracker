@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FiDo Expense Tracker | Edit Expense</title>
+</head>
+<body>
+    <form action="/edit-expense" method="PUT">
+        <label for="description">
+            <input type="text" name="description" id="description" placeholder="description" value="${expense.description}" />
+        </label>
+        <label for="categoryName">
+            <input type="text" name="categoryName" id="categoryName" placeholder="categoryName" value="${expense.categoryName}" />
+        </label>
+        <label for="expenseDate">
+            <input type="text" name="expenseDate" id="expenseDate" placeholder="expense date" value="${expense.expenseDate}" />
+        </label>
+        <label for="amount">
+            <input type="text" name="amount" id="amount" placeholder="amount" value="${expense.amount}" />
+        </label>
+        <input type="submit" />
+    </form>
+</body>
+</html>

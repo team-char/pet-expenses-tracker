@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FiDo Expense Tracker | All Expenses</title>
+</head>
+<body>
+    <div th:replace="fragments/header :: header">...</div>
+    <h1>All Expenses</h1>
+    <ul id="expense-list">
+        <li th:each="expense : ${expenses}" class="edit-container">
+            <div class="card" th:attr="data-id=${expense.id}">
+                <h2><span contenteditable="false">[[${expense.description}]]</span></h2>
+                <p>Category: <span contenteditable="false">[[${expense.categoryName}]]</span></p>
+                <p>Date: <span contenteditable="false" th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></span></p>
+                <p>Amount: <span contenteditable="false">[[${expense.amount}]]</span></p>
+            </div>
+            <div class="button-container">
+                <a th:href="@{'/edit-expense/' + ${expense.id}}" class="edit-a">Edit</a>
+                <a th:href="@{'/expenses/' + ${expense.id}}" class="delete-a">Delete</a>
+            </div>
+        </li>
+    </ul>
+
+    <!--<script type="text/javascript" src="js/edit-expenses.js"></script>-->
+</body>
+</html>
