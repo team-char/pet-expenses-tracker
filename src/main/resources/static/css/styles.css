@@ -140,7 +140,29 @@ body {
     background-color: grey;
 }
 
+
+
+/* all-expenses page */
+
 .button-container {
     width: 100px;
     display: flex;
+}
+
+#editButton{
+    margin-right: 10px;
+}
+
+#expense-list{
+    list-style: none;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#update-expense-table{
+    width: 100%;
+}
+
+#all-expense-category{
+    text-align: center;
 }
