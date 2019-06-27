@@ -130,6 +130,12 @@ body {
     /* text-align: center; */
 }
 
+/* edit-expense page */
+.edit-expense-container {
+    width: 30%;
+    margin: 0 auto;
+}
+
 #editButton {
     background-color: grey;
 }
