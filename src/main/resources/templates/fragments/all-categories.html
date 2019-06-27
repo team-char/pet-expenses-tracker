@@ -28,7 +28,7 @@
             <tr th:each="expense : ${sortByMonthList}">
                 <td th:text="${#dates.format(expense.expenseDate, 'MM-dd-yyyy')}"></td>
                 <td th:text="${expense.description}"></td>
-                <td th:text="${#numbers.formatDecimal(expense.amount,0,2)}"></td>
+                <td>$<span th:text="${#numbers.formatDecimal(expense.amount,0,2)}"></span></td>
                 <td th:text="${expense.categoryName}"></td>
             </tr>
         </table>
@@ -37,8 +37,13 @@
         This months total amount is: <span th:text="${#aggregates.sum(totalAmount)}"></span>
     </p>
 
-    <h1>Sort by Category</h1>
-    <p>add content here</p>
+    <h1>Total Amounts by Category</h1>
+    <table>
+        <tr th:each="expense : ${totalCategoryAmount}">
+            <td th:text="${expense.key}"></td>
+            <td th:text="${expense.value}"></td>
+        </tr>
+    </table>
 
     <h1> All Expenses</h1>
     <table>
