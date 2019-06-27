@@ -74,7 +74,6 @@ public class ExpenseController {
     }
 
     // PUT: update an expense
-//    @PutMapping("/edit/{id}")
     @RequestMapping(value = "/edit/{id}", method = {RequestMethod.GET, RequestMethod.PUT})
     public RedirectView editExpense(@PathVariable Long id, @RequestParam String expenseDate, @RequestParam String description, @RequestParam Double amount, @RequestParam String categoryName, Principal p, Model m) {
 
