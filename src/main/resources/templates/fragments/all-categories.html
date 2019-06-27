@@ -1,26 +1,8 @@
 <div th:fragment="all-categories" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
     <h1>Total Amount by Category</h1>
 
-<<<<<<< HEAD
-    <form action="/dashboard/{month}" method="POST">
-        <label for="month">Select Month to View Expense</label>
-        <select name="month" id="month">
-            <option
-                th:each="month : ${monthList}"
-                th:value="${month.key}"
-                th:text="${month.value}">
-            </option>
-        </select>
-        <button class="pure-button pure-button-primary" type="submit">Submit</button>
-    </form>
-
-    <h1>Month Expense</h1>
-    <div th:if="${#lists.isEmpty(sortByMonthList)}">
-        <p>Currently no expenses shown</p>
-=======
     <div th:if="${#lists.isEmpty(totalCategoryAmount)}">
         <p>No categories to add up!</p>
->>>>>>> d09548d5d2b4049571754d3cc865e8eb85819dab
     </div>
     <div th:if="${not #lists.isEmpty(totalCategoryAmount)}">
         <table>
