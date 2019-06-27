@@ -1,26 +1,29 @@
-<div th:fragment="all-pie-chart" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
+<div th:fragment="month-pie-chart" xmlns:th="xmlns:th=http://www.w3.org/1999/xhtml">
 
-    <div th:if="${allExpenseDataPoints} == null">
-        <p>You have no data.</p>
+    <div th:if="${monthDataPoints} == null">
+        <p>No chart data for this month.</p>
     </div>
-    <div th:if="${allExpenseDataPoints} != null">
+    <div th:if="${monthDataPoints} != null">
+
         <script th:inline="javascript">
             /*<![CDATA[*/
             window.onload = function() {
-               console.log("HELLO ARE YOU HERE 2");
+               console.log("HELLO ARE YOU HERE");
 
-               var dataPoints = /*[[${allExpenseDataPoints}]]*/ 'default';
-               dataPoints.forEach(myFunction);
-               function myFunction(value, index, array){
+               var monthDataPoints = /*[[${monthDataPoints}]]*/ 'default';
+
+               monthDataPoints.forEach(myFunction1);
+               console.log(monthDataPoints);
+               function myFunction1(value, index, array){
                 console.log(value);
                }
 
-            var chart = new CanvasJS.Chart("chartContainer2", {
+            var myMonthChart = new CanvasJS.Chart("chartContainer1", {
                 theme: "light2", // "light1", "light2", "dark1", "dark2"
                 exportEnabled: true,
                 animationEnabled: true,
                 title: {
-                    text: "All Expenses By Category"
+                    text: "Monthly Expenses By Category"
                 },
                 data: [{
                     type: "pie",
@@ -30,11 +33,10 @@
                     legendText: "{label}",
                     indexLabelFontSize: 16,
                     indexLabel: "{label} - ${y}",
-                    dataPoints: /*[[${allExpenseDataPoints}]]*/ []
+                    dataPoints: /*[[${monthDataPoints}]]*/ []
                 }]
             });
-            chart.render();
-
+            myMonthChart.render();
             }
              /*]]>*/
         </script>
@@ -42,8 +44,9 @@
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 
+
         <!--This displays the chart -->
-        <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+        <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
     </div>
 </div>
 
