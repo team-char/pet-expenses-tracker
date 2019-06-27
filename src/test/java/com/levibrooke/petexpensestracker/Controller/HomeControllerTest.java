@@ -1,6 +1,5 @@
 package com.levibrooke.petexpensestracker.Controller;
 
-import com.levibrooke.petexpensestracker.PetExpensesTrackerApplication;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,15 +15,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.Assert.*;
+
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
-//@AutoConfigureMockMvc
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -32,6 +29,7 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
         locations = "classpath:application.properties")
 
 public class HomeControllerTest {
+
 
     @Autowired
     HomeController homeController;
@@ -50,21 +48,32 @@ public class HomeControllerTest {
                 .build();
     }
 
-//    public static RequestPostProcessor testUser(){
-//        return user("user").password("pass").roles("ADMIN");
-//    }
+    public static RequestPostProcessor testUser(){
+        return user("Confucius").password("password").roles("ADMIN");
+    }
 
     @Test
     public void testIntegrationAbout() throws Exception{
         mockMvc.perform(get("/about-us")).andExpect(content().string(containsString("About Us")));
     }
 
-//    @WithMockUser
-//    @Test
-//    public void testIntegrationDashboard() throws Exception{
-////        mockMvc.perform(get("/dashboard")).andExpect(content().string(containsString("Dashboard")));
-//        mockMvc.perform(get("/dashboard").with(testUser()));
-//    }
+    @WithMockUser
+    @Test
+    public void testIntegrationDashboard() throws Exception{
+    mockMvc.perform(get("/dashboard").with(testUser())).andExpect(content().string(containsString("Dashboard")));
 
+    }
+    @WithMockUser
+    @Test
+    public void testIntegrationAllExpenses() throws Exception{
+        mockMvc.perform(get("/all-expenses").with(testUser())).andExpect(content().string(containsString("All Expenses")));
+
+    }
+    @WithMockUser
+    @Test
+    public void testIntegrationEditExpense() throws Exception{
+        mockMvc.perform(get("/edit-expense/2").with(testUser())).andExpect(content().string(containsString("Edit Expense")));
+
+    }
 
 }
