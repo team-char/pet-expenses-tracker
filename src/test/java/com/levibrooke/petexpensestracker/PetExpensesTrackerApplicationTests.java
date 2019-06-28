@@ -123,11 +123,7 @@ public class PetExpensesTrackerApplicationTests {
 		assertNotNull(expenseController);
 	}
 
-	@Test
-	@WithMockUser
-	public void testIntegrationExpense() throws Exception{
-		mockMvc.perform(get("/create-expense")).andExpect(content().string(containsString("Add an expense!")));
-	}
+
 
 	@Test
 	@WithMockUser

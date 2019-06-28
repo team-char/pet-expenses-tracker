@@ -12,11 +12,11 @@ Liz Mahoney (emd5), Levi Porter (levibrooke), Sudip Adhikari (sadhikari07), and 
 ## Overview
 A pet expense tracker app that keeps track of month-to-month expenses. Features include:
 
-    - Ability to sign-up
-    - Ability to Login using username and password
-	- Consists of category expense breakdown
-	- Ability to create expense and see all expenses in the dashboard
-	- The dashboard page will also show monthly expenses by category, total amount by category and the total expenses.
+    * Ability to sign-up
+    * Ability to Login using username and password
+	* Consists of category expense breakdown
+	* Ability to create expense and see all expenses in the dashboard
+	* The dashboard page will also show monthly expenses by category, total amount by category and the total expenses.
 
 
 
@@ -75,8 +75,13 @@ Use the Spring `Initializr` to set
     `/`
 
 ## Resources 
-    - Sprint Auth Cheat Sheet - https://github.com/codefellows/seattle-java-401d4/blob/master/SpringAuthCheatSheet.md 
-    - Hiberate Many-to-Many - https://www.baeldung.com/hibernate-many-to-many
+    - Sprint Auth Cheat Sheet -> https://github.com/codefellows/seattle-java-401d4/blob/master/SpringAuthCheatSheet.md 
+    - Hiberate Many-to-Many -> https://www.baeldung.com/hibernate-many-to-many
     - RDS Cheat Sheet - https://github.com/codefellows/seattle-java-401d4/blob/master/RDSCheatSheet.md
-    - Currency format - http://www.captaindebug.com/2011/08/using-spring-3-numberformat-annotation.html#.XRF7upNKgsk
-    - Generate an empty table the populate DB - https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
+    - Currency format -> http://www.captaindebug.com/2011/08/using-spring-3-numberformat-annotation.html#.XRF7upNKgsk
+    - Generate an empty table the populate DB -> https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
+    - Css -> https://purecss.io/
+    - Charts -> https://canvasjs.com/docs/charts/basics-of-creating-html5-chart/
+    - Integration tests for our Spring Boot Rest APIs -> https://www.javaguides.net/2018/09/spring-boot-2-rest-apis-integration-testing.html
+    - How to register your event listener and create a database seeder in Spring Boot-> https://dzone.com/articles/how-to-create-a-database-seeder-in-spring-boot
+     
