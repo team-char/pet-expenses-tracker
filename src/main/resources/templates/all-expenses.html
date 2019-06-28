@@ -12,32 +12,29 @@
 </head>
 <body>
     <div th:replace="fragments/header :: header">...</div>
-    <h1 class="pageTitle">All Expenses</h1>
-    <ul id="expense-list">
-        <li th:each="expense : ${expenses}" class="edit-container">
-            <div class="card" th:attr="data-id=${expense.id}">
-                <h2><span class="all-expense-category" contenteditable="false">[[${expense.description}]]</span></h2>
-                <table id="update-expense-table" class="pure-table pure-table-horizontal">
-                    <tr>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Amount</th>
-                        <th>Update</th>
-                    </tr>
-                    <tr>
-                        <td><span contenteditable="false">[[${expense.categoryName}]]</span></td>
-                        <td><span contenteditable="false" th:text="${#dates.format(expense.expenseDate, 'MM/dd/yyyy')}"></span></td>
-                        <td><span contenteditable="false">$[[${#numbers.formatDecimal(expense.amount, 1, 'DEFAULT', 2, 'DEFAULT')}]]</span></td>
-                        <td><span class="button-container">
-                            <a th:href="@{'/edit-expense/' + ${expense.id}}" class="pure-button pure-button-primary" id="editButton">Edit</a>
-                            <form th:action="@{'/expenses/' + ${expense.id}}" method="POST">
-                                <input class="pure-button pure-button-primary" id="deleteButton" type="submit" value="Delete" />
-                            </form> 
-                        </span></td>
-                    </tr>
-                </table>
-            </div>
-        </li>
-    </ul>
+    <main class="all-container">
+        <h1 class="pageTitle">All Expenses</h1>
+        <table id="update-expense-table" class="pure-table pure-table-horizontal">
+            <tr>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Update</th>
+            </tr>     
+            <tr th:each="expense : ${expenses}" class="edit-container">
+                <td><span class="all-expense-category" contenteditable="false">[[${expense.description}]]</span></td>
+                <td><span contenteditable="false">[[${expense.categoryName}]]</span></td>
+                <td><span contenteditable="false" th:text="${#dates.format(expense.expenseDate, 'MM/dd/yyyy')}"></span></td>
+                <td><span contenteditable="false">$[[${#numbers.formatDecimal(expense.amount, 1, 'DEFAULT', 2, 'DEFAULT')}]]</span></td>
+                <td><span class="button-container">
+                    <a th:href="@{'/edit-expense/' + ${expense.id}}" class="pure-button pure-button-primary" id="editButton">Edit</a>
+                    <form th:action="@{'/expenses/' + ${expense.id}}" method="POST">
+                        <input class="pure-button pure-button-primary" id="deleteButton" type="submit" value="Delete" />
+                    </form> 
+                </span></td>
+            </tr>
+        </table>
+    </main>
 </body>
 </html>
