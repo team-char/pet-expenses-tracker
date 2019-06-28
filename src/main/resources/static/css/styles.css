@@ -163,10 +163,10 @@ body {
     margin-right: 10px;
 }
 
-#expense-list {
-    list-style: none;
-    width: 60%;
+.all-container {
+    width: 80%;
     margin: 0 auto;
+    margin-bottom: 100px;
 }
 
 #update-expense-table {
