@@ -1,6 +1,6 @@
 # Fido Expense Tracker
 
-![Splash page](./src/main/resources/static/img/index.jpg)
+![Splash page](./src/main/resources/static/img/index.png)
 
 
 ## Author
@@ -63,7 +63,7 @@ Use the Spring `Initializr` to set
 * This route will take user to the sign-out page
     `sign-out`
 * This route will take user to create expense
-    `/create-expense`
+    `/add-expense`
 * This route will take user to the dashboard
     `/dashboard`
 * This route will take user where all the expenses are listed.
