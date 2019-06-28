@@ -57,13 +57,21 @@ Use the Spring `Initializr` to set
 
 ## Routes
 
-    `/sign-up`
+* This route will take user to the sign-up page
+`/sign-up`
+* This route will take user to the login page
     `/login`
+* This route will take user to the sign-out page
     `sign-out`
+* This route will take user to create expense
     `/create-expense`
+* This route will take user to the dashboard
     `/dashboard`
+* This route will take user where all the expenses are listed.
     `/all-expenses`
+* This route will take user to the authors.
     `/about-us`
+* This route will take user to the splash page
     `/`
 
 ## Resources 
