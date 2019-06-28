@@ -25,7 +25,7 @@ public class ExpenseController {
     ExpenseRepository expenseRepository;
 
     // GET: route to expense form
-    @GetMapping("/create-expense")
+    @GetMapping("/add-expense")
     public String getFormExpense(Principal p, Model m){
         HomeController.isUserLoggedIn(p, m);
         return "create-expense";
