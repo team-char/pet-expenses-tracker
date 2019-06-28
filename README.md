@@ -1,4 +1,4 @@
-# Fido Expense Tracker
+# Fi-Do Expense Tracker
 
 ![Splash page](./src/main/resources/static/img/index.png)
 
