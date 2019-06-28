@@ -11,12 +11,11 @@ Liz Mahoney (emd5), Levi Porter (levibrooke), Sudip Adhikari (sadhikari07), and 
 
 ## Overview
 A pet expense tracker app that keeps track of month-to-month expenses. Features include:
-
-    * Ability to sign-up
-    * Ability to Login using username and password
-	* Consists of category expense breakdown
-	* Ability to create expense and see all expenses in the dashboard
-	* The dashboard page will also show monthly expenses by category, total amount by category and the total expenses.
+* Ability to sign-up
+* Ability to Login using username and password
+* Consists of category expense breakdown
+* Ability to create expense and see all expenses in the dashboard
+* The dashboard page will also show monthly expenses by category, total amount by category and the total expenses.
 
 
 
