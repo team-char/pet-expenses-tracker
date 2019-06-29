@@ -4,7 +4,10 @@
 
 
 ## Author
-Liz Mahoney (emd5), Levi Porter (levibrooke), Sudip Adhikari (sadhikari07), and Kishor Pandey (kishorpan2)
+* Liz Mahoney [Github profile emd5](https://github.com/emd5)
+* Levi Porter [Github profile levibrooke](https://github.com/levibrooke)
+* Sudip Adhikari [Github profile sadhikari07]https://github.com/sadhikari07)
+* Kishor Pandey [Github profile kishorpan2](https://github.com/kishorpan2)
 
 ## Version 
 1.0.0
@@ -58,20 +61,36 @@ Use the Spring `Initializr` to set
 
 * This route will take user to the sign-up page
 `/sign-up`
+![Sign up](./src/main/resources/static/img/signUp.png)
 * This route will take user to the login page
     `/login`
+    ![Login](./src/main/resources/static/img/logIn.png)
 * This route will take user to the sign-out page
     `sign-out`
 * This route will take user to create expense
     `/add-expense`
+    ![Add-expense](./src/main/resources/static/img/addExpense.png)
 * This route will take user to the dashboard
     `/dashboard`
+    ![Dashboard](./src/main/resources/static/img/dashboard.png)
 * This route will take user where all the expenses are listed.
     `/all-expenses`
+    ![All-expenses](./src/main/resources/static/img/allExpense.png)
 * This route will take user to the authors.
     `/about-us`
+    ![About us](./src/main/resources/static/img/aboutUs.png)
 * This route will take user to the splash page
     `/`
+    ![Splash page](./src/main/resources/static/img/index.png)
+
+## Technologies used in this application:
+* Intellij
+* gradle
+* spring boot
+* github
+* chart js
+* AWS (RDS and EC2)
+
 
 ## Resources 
     - Sprint Auth Cheat Sheet -> https://github.com/codefellows/seattle-java-401d4/blob/master/SpringAuthCheatSheet.md 
@@ -83,4 +102,5 @@ Use the Spring `Initializr` to set
     - Charts -> https://canvasjs.com/docs/charts/basics-of-creating-html5-chart/
     - Integration tests for our Spring Boot Rest APIs -> https://www.javaguides.net/2018/09/spring-boot-2-rest-apis-integration-testing.html
     - How to register your event listener and create a database seeder in Spring Boot-> https://dzone.com/articles/how-to-create-a-database-seeder-in-spring-boot
+    - Logo -> https://www.freelogodesign.org/?v=direct&sv=ni&utm_expid=.zKm1QJTySpqlGxV9Kiu8cQ.2&utm_referrer=https%3A%2F%2Fwww.freelogodesign.org%2F%3Fv%3Ddirect%26sv%3Dni
      
