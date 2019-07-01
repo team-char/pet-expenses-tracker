@@ -59,3 +59,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new UserDetailsServiceImpl();
     }
 }
+
+//Are images allowed by default without authentication.

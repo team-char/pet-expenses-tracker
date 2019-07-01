@@ -78,3 +78,5 @@ public class Expense {
 
     public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
 }
+
+//Having specific data types: GOOD.

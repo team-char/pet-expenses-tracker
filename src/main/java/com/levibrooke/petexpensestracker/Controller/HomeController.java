@@ -74,10 +74,14 @@ public class HomeController {
         m.addAttribute("monthList", getMonths());
         m.addAttribute("totalCategoryAmount", getTotalAmountsByCategory(userExpenses));
         m.addAttribute("totalAmount", getTotalAmountExpenses(userExpenses));
+        //Doesn't seem to be used anywhere. Verifuy!!!
         m.addAttribute("userExpenses", userExpenses);
         m.addAttribute("sortByMonthList", getSortedByMonthExpense(userExpenses, month));
         return "dashboard";
     }
+
+
+    //Review these helper methods
 
     //Helper Methods
     private DataPoint[] getDataPoints(HashMap<String, Double> hashMap){
@@ -155,6 +159,8 @@ public class HomeController {
         hashMap.put("12", "December");
         return hashMap;
     }
+
+    //Is being used in other controllers. Is it a good practice?
 
     public static void isUserLoggedIn(Principal p, Model m){
         if(p != null){
