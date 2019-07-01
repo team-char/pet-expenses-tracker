@@ -63,6 +63,7 @@ public class ExpenseController {
 
         List<String> categories = new ArrayList<>();
         categories.add("Food");
+        categories.add("Veterinarian");
         categories.add("Supplies/Toy");
         categories.add("Grooming");
         categories.add("Daycare");
