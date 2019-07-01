@@ -4,10 +4,10 @@
 
 
 ## Author
-* Liz Mahoney [Github profile emd5](https://github.com/emd5)
-* Levi Porter [Github profile levibrooke](https://github.com/levibrooke)
-* Sudip Adhikari [Github profile sadhikari07]https://github.com/sadhikari07)
-* Kishor Pandey [Github profile kishorpan2](https://github.com/kishorpan2)
+* Liz Mahoney - [emd5](https://github.com/emd5)
+* Levi Porter - [levibrooke](https://github.com/levibrooke)
+* Sudip Adhikari - [sadhikari07](https://github.com/sadhikari07)
+* Kishor Pandey - [kishorpan2](https://github.com/kishorpan2)
 
 ## Version 
 1.0.0
@@ -27,16 +27,15 @@ Deployed Link - <http://fido-expenses-tracker.us-west-2.elasticbeanstalk.com/>
 
 ## Getting Started
 
-    - On your local, create a folder named `fido`.
-    - Then `git init`.
-    - On github, copy the link and clone repo inside of the folder that you created
-    `git clone https://github.com/team-char/pet-expenses-tracker.git`.
-    - Go inside the directory `pet-expenses-tracker` Then open intelliJ `idea .`
-    - In the import project popup screen, select `used import`, and select appropriate `JDK` (can be 8 or above)
-    cd.
-    - Go to `src` > `main` > `resource` > `application.properties`
-    - Change `spring.jpa.hibernate.ddl-auto=create` to `spring.jpa.hibernate.ddl-auto=update`
-    - Then Run application to build the database for `/sign-up` and `/login`
+- Clone this repo `git clone https://github.com/team-char/pet-expenses-tracker.git`.
+- Open the directory with intelliJ `idea .`
+- In the import project popup screen, select `use import`, and select appropriate JDK (can be 8 or above).
+- Create a Postgresql database named `fido`
+- Go to `src` > `main` > `resources` > `application.properties`
+- To run locally, make sure the env is set to: `spring.profiles.active=dev`
+- Before first run, change `application-dev.properties` change `spring.jpa.hibernate.ddl-auto=update` to `spring.jpa.hibernate.ddl-auto=create`
+- Then run application to build the database tables.
+- After first run, change `spring.jpa.hibernate.ddl-auto=create` to `spring.jpa.hibernate.ddl-auto=update`
 
 ***To Run Application***
 
@@ -75,7 +74,7 @@ Use the Spring `Initializr` to set
     ![Dashboard](./src/main/resources/static/img/dashboard.png)
 * This route will take user where all the expenses are listed.
     `/all-expenses`
-    ![All-expenses](./src/main/resources/static/img/allExpense.png)
+    ![All-expenses](./src/main/resources/static/img/allExpenses.png)
 * This route will take user to the authors.
     `/about-us`
     ![About us](./src/main/resources/static/img/aboutUs.png)
@@ -85,11 +84,12 @@ Use the Spring `Initializr` to set
 
 ## Technologies used in this application:
 * Intellij
-* gradle
-* spring boot
-* github
-* chart js
-* AWS (RDS and EC2)
+* Gradle
+* Spring Boot
+* Postgresql
+* Github
+* Chart.js
+* AWS (RDS and Elastic Beanstalk)
 
 
 ## Resources 
