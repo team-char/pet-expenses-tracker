@@ -75,11 +75,11 @@ public class HomeControllerTest {
         mockMvc.perform(get("/edit-expense/2").with(testUser())).andExpect(content().string(containsString("Edit Expense")));
 
     }
-    @WithMockUser
-    @Test
-    public void testIntegrationAddExpense() throws Exception{
-        mockMvc.perform(get("/create-expense").with(testUser())).andExpect(content().string(containsString("Add Expense")));
-
-    }
+//    @WithMockUser
+//    @Test
+//    public void testIntegrationAddExpense() throws Exception{
+//        mockMvc.perform(get("/create-expense").with(testUser())).andExpect(content().string(containsString("Add Expense")));
+//
+//    }
 
 }
