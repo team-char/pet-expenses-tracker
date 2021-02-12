@@ -17,35 +17,16 @@ public class Category {
     @Column(unique = true)
     String name;
 
-//    @OneToMany(mappedBy="expense")
-//    public List<Expense> expenses;
-
-//    @Autowired
-//    CategoryRepository categoryRepository;
 
     public Category(){
-//        loadData();
+
     }
 
     public Category(String name){
         this.name = name;
     }
 
-//    public void loadData(){
-//        List<String> categoryList = new ArrayList<>();
-//        categoryList.add("Food");
-//        categoryList.add("Vet Expense");
-//        categoryList.add("Supplies/Toys");
-//        categoryList.add("Grooming");
-//        categoryList.add("Daycare");
-//        categoryList.add("Pet Date");
-//        categoryList.add("Miscellaneous");
-//
-//        for(int i = 0; i<categoryList.size(); i++){
-//            Category newCategory = new Category(categoryList.get(i));
-//            categoryRepository.save( newCategory);
-//        }
-//    }
+
 
     public long getId() { return id; }
 
@@ -57,5 +38,5 @@ public class Category {
         this.name = name;
     }
 
-//    public List<Expense> getExpenses() { return expenses; }
+
 }
